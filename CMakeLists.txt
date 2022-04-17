@@ -15,6 +15,7 @@ set(TEENSY_DRIVER_DIR "${CMAKE_SOURCE_DIR}/driver/teensy4")
 file(GLOB ${CMAKE_PROJECT_NAME}_src
   "${SRC_FILES}/*.cpp"
   "${SRC_FILES}/*.c"
+  "${SRC_FILES}/*.S"
   "${TEENSY_DRIVER_DIR}/*.cpp"
   "${TEENSY_DRIVER_DIR}/*.c"
 )
@@ -22,6 +23,7 @@ file(GLOB ${CMAKE_PROJECT_NAME}_src
 include_directories(
     "${TEENSY_DRIVER_DIR}"
     "${SRC_FILES}"
+    "${SRC_FILES}/lib/TeensyThreads"
 )
 
 # Clean up the hex file we created

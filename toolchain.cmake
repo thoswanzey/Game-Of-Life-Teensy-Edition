@@ -55,6 +55,7 @@ set(CPU_OPTIONS                 "-mcpu=cortex-m7 -mfloat-abi=hard -mfpu=fpv5-d16
 
 set(CMAKE_C_FLAGS               "-Wall -g -O2 ${CPU_OPTIONS} -MMD ${TEENSY_OPTIONS} -I. -ffunction-sections -fdata-sections")
 set(CMAKE_CXX_FLAGS             "${CMAKE_C_FLAGS} -std=gnu++14 -felide-constructors -fno-exceptions -fpermissive -fno-rtti -Wno-error=narrowing")
+SET(CMAKE_ASM_FLAGS             "${CMAKE_C_FLAGS} -x assembler-with-cpp")
 
 set(CMAKE_C_FLAGS_DEBUG         "-Og -g" CACHE INTERNAL "")
 set(CMAKE_C_FLAGS_RELEASE       "-Og -DNDEBUG" CACHE INTERNAL "")
