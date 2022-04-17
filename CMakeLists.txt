@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.18.4)
 set(BAREMETAL_ARM_TOOLCHAIN_PATH /usr/bin)
 set(CMAKE_TOOLCHAIN_FILE toolchain.cmake)
 
-project(teensyistic LANGUAGES C CXX)
+project(teensyistic LANGUAGES C CXX ASM)
 
 # Common directories
 set(SRC_FILES "${CMAKE_SOURCE_DIR}/src")
@@ -12,7 +12,7 @@ set(BUILD_FILES "${CMAKE_SOURCE_DIR}/build")
 set(TEENSY_DRIVER_DIR "${CMAKE_SOURCE_DIR}/driver/teensy4")
 
 # Specify our source files
-file(GLOB ${CMAKE_PROJECT_NAME}_src
+file(GLOB_RECURSE ${CMAKE_PROJECT_NAME}_src
   "${SRC_FILES}/*.cpp"
   "${SRC_FILES}/*.c"
   "${SRC_FILES}/*.S"
