@@ -8,16 +8,10 @@
 4.Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 */
 
-struct Coordinate
+struct Cell
 {
     uint32_t x;
     uint32_t y;
-};
-
-struct Cell
-{
-    Coordinate location;
-    uint32_t neighbor_count;
 };
 
 class GameOfLife
